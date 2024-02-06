@@ -1,2 +1,2 @@
-<h1>Welcome!</h1>
-<p>I am Kaenirr a 3D artist/programmer consumed by my desire to learn everything</p>
+<h1>Welcome to my page!</h1> <br>
+<p>This page is very much in progress but I am happy to welcome you here</p> <br>

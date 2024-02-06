@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"buildAndPreview": "vite build && vite preview",
         "deploy": "pnpm build && echo kaenirr.com > ./build/CNAME && pnpm gh-pages -d build -t true",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",

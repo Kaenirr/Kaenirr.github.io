@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "buildAndPreview",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: buildAndPreview",
+			"detail": "vite build && vite preview"
+		}
+	]
+}
