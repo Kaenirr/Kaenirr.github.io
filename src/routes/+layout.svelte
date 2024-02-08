@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { base } from "$app/paths";
+	import BottomBar from "./../Components/BottomBar.svelte";
+	import GlobalStyles from "../../static/global.css";
 </script>
 
 <nav>
@@ -9,7 +11,7 @@
 				<a href="{base}/">Kaenirr</a>
 			</li>
 			<li>
-				<a href="{base}/myWork">MyWork</a>
+				<a href="{base}/myWork">My Work</a>
 			</li>
 			<li>
 				<a href="{base}/aboutMe">About Me</a>
@@ -20,10 +22,12 @@
 <div class="container">
 	<slot />
 </div>
+<BottomBar></BottomBar>
 
 <style>
 	nav {
 		background-color: #126ba3;
+		font-size: 2em;
 		color: white;
 	}
 	.container {
@@ -33,10 +37,11 @@
 		display: flex;
 		margin: 0;
 		margin-right: auto;
+		padding-left: 0%;
 		list-style: none;
 	}
 	li {
-		margin-left: 10px;
+		margin-right: 10px;
 	}
 	a {
 		text-decoration: none;

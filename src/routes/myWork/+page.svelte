@@ -1,7 +1,28 @@
-<h1>MyWork</h1><br>
-<p> My social media:
-<br>
-<a href="https://www.instagram.com/kaenirr3d/" target="_blank">My Instagram</a>
-<br>
-<a href="https://www.artstation.com/kaenirr" target="_blank">My ArtStation</a>
-</p>
+<script>
+  let images = [
+    "MyWorkPreviewImages/preview1.png",
+    "MyWorkPreviewImages/preview2.png",
+  ];
+</script>
+
+<h1>Portfolio:</h1>
+<div class="grid-container">
+  {#each images as image}
+    <img src={image} alt="Image from my portfolio"/>
+  {/each}
+</div>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: 500px;
+    max-height: 500px;
+  }
+  .grid-container img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    max-height: 100%; /* Ensure images don't exceed container height */
+    object-fit: cover; /* Maintain aspect ratio while filling the container */
+  }
+</style>
