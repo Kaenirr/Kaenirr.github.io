@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: "SpaceMono-Regular", sans-serif;
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: 'SpaceMono-Regular';
+    src: url('./SpaceMono-Regular.ttf');
+}
