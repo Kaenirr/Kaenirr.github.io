@@ -1,50 +1,49 @@
 <script lang="ts">
-	import { base } from "$app/paths";
-	import BottomBar from "./../Components/BottomBar.svelte";
+	import NavBar from '../lib/components/NavBar/NavBar.svelte';
+	import BottomBar from "../lib/components/BottomBar.svelte";
+	import { onHydrated, theme } from '$lib/stores/theme';
+	import { onMount } from 'svelte';
 	import GlobalStyles from "../../static/global.css";
+	import '$lib/index.scss';
+	import 'virtual:uno.css'
+
+	onMount(() => onHydrated());
 </script>
 
-<nav>
-	<div class="container">
-		<ul>
-			<li>
-				<a href="{base}/">Kaenirr</a>
-			</li>
-			<li>
-				<a href="{base}/myWork">My Work</a>
-			</li>
-			<li>
-				<a href="{base}/aboutMe">About Me</a>
-			</li>
-		</ul>
-	</div>
-</nav>
-<div class="container">
-	<slot />
+<div class={`body contents ${$theme ? 'theme-dark' : 'theme-light'}`}>
+	<NavBar />
+	<div class="content container">	<slot /></div>
+	<BottomBar></BottomBar>
 </div>
-<BottomBar></BottomBar>
 
-<style>
-	nav {
-		background-color: #126ba3;
-		font-size: 2em;
-		color: white;
-	}
-	.container {
+
+<style lang="scss">
+	.content {
 		display: flex;
+		flex-direction: column;
+		flex: 1;
+		padding: 0px 0px;
 	}
-	ul {
+
+	.body { 
+		margin: 0px;
+		background-color: var(--main);
+		color: var(--main-text);
+		font-family: var(--text-f);
 		display: flex;
-		margin: 0;
-		margin-right: auto;
-		padding-left: 0%;
-		list-style: none;
+		flex-direction: column;
+		transition-duration: 200ms;
+
+		letter-spacing: 1px;
+
+		min-height: 100vh;
 	}
-	li {
-		margin-right: 10px;
+
+	:global(p) {
+		margin: 0px;
 	}
-	a {
-		text-decoration: none;
-		color: white;
+
+	:global(h1, h2, h3, h4, h5, h6) {
+		margin: 5px 0px;
 	}
 </style>
