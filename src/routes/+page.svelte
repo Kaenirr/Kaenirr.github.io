@@ -1,22 +1,44 @@
 <script lang="ts">
-    export let classes = '';
-</script>
+	import Carrousel from '$lib/components/Carrousel/Carrousel.svelte';
+	import Icon from '$lib/components/Icon/Icon.svelte';
+	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
+	import { titleSuffix } from '@data/app';
+	import { links, description, name, title, skills } from '@data/home';
+	import { items as skillsItems } from '@data/skills';
+	import { useTitle } from '$lib/utils/helpers';
+	import { isBlank } from '@riadh-adrani/utils';
+	import { getPlatfromIcon } from '$lib/utils';
 
+	const isEmail = (email: string): boolean => {
+		const reg =
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		return !isBlank(email) && reg.test(email);
+	};
+</script>
+<svelte:head>
+	<title>{useTitle(title, titleSuffix)}</title>
+</svelte:head>
 <div
 	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-10px"
 >
-
-    <div class="md:flex-1 gap-10px">
-            <h1
-                class={`font-[var(--title-f)] font-black tracking-[4px] text-center text-2.5em sm:text-[3em] md:text-[3.5em] lg:text-[4em] ${classes}`}
-                style="background: linear-gradient(var(--main-text), var(--accent-text-hover)); -webkit-background-clip: text; background-clip: text;"
-            >
-                Kaenirr,
-            </h1>
-
-        <p class="text-[var(--tertiary-text)]  text-center md:text-left text-[1.2em] font-extralight">
-			I am Martin, a 3D artist/programmer consumed by my desire to learn everything.
+	<div class="md:flex-1 gap-10px">
+		<MainTitle classes="md:text-left ">{name} ,</MainTitle>
+		<p class="text-[var(--tertiary-text)]  text-center md:text-left text-[1.2em] font-extralight">
+			{description}
 		</p>
-    </div>
-
+		<div class="row justify-center md:justify-start p-y-15px p-x-0px gap-2">
+			{#each links as link}
+				<a
+					class="decoration-none"
+					href={`${isEmail(link.link) ? 'mailto:' : ''}${link.link}`}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<Icon icon={getPlatfromIcon(link.platform)} color={'var(--accent-text)'} size={'20px'} />
+				</a>
+			{/each}
+		</div>
+	</div>
+	<Carrousel items={skills ?? skillsItems} />
 </div>

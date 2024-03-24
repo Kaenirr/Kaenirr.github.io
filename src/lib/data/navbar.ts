@@ -1,5 +1,6 @@
 export const items = [
-	{ title: 'Projects', to: '/projects' },
 	{ title: 'Skills', to: '/skills' },
-    { title: 'Resume', to: '/resume' },
+	{ title: 'Projects', to: '/projects' },
+    { title: 'Experience', to: '/experience' },
+    { title: 'Resumé', to: '/resume' },
 ] as const;

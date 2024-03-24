@@ -11,6 +11,11 @@ const config = {
     kit: {
 
         adapter: adapter(),
+        
+        alias: {
+            $lib: './src/lib',
+            '@data': './src/lib/data',
+        },
 
         paths: {
             base: process.env.NODE_ENV === 'production' ? '/Kaenirr.github.io' : '',

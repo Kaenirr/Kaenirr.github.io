@@ -1,5 +1,10 @@
-<div
-	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-10px"
->
-WIP
-</div>
+<script lang="ts">
+	import { title } from '@data/resume';
+
+    import CommonPage from '$lib/components/CommonPage.svelte';
+
+</script>
+
+<CommonPage {title}>
+
+</CommonPage>
