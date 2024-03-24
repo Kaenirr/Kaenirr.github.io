@@ -1,0 +1,1 @@
+import{A as e,b as s}from"./skills.6Wc2S-3E.js";const o=[{slug:"test",color:"#5e95e3",description:"WIP",shortDescription:"WIP",links:[{to:"https://kaenirr.com",label:"Placeholder"}],logo:e.Unknown,name:"Test",period:{from:new Date(2022,9,1)},skills:s("blender","substancePainter"),type:"Placeholder"}],l="Projects";export{o as i,l as t};
