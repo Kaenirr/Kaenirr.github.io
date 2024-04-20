@@ -7,7 +7,7 @@ const gh = (file: string) => `${base}/logos/${file}`;
 const a = (light: string, dark?: string): Asset =>
 	dark ? { dark: gh(dark), light: gh(light) } : gh(light);
 
-const Assets = {
+const 	Assets = {
 	AWS: a('aws.svg'),
 	Bootstrap: a('bootstrap.svg'),
 	Blender: a('blender.svg'),

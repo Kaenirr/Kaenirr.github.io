@@ -13,7 +13,6 @@
 <div class={`body contents ${$theme ? 'theme-dark' : 'theme-light'}`}>
 	<NavBar />
 	<div class="content container">	<slot /></div>
-	<BottomBar></BottomBar>
 </div>
 
 

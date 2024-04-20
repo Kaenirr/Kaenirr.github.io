@@ -17,7 +17,7 @@ export const items: Array<Experience> = [
 		type: 'Game development',
 		location: 'Pilsen',
 		period: { from: new Date(2022,9,1) },
-		skills: getSkills('unity', 'blender', 'csharp'),
+		skills: getSkills('unity', 'blender', 'csharp', 'photonFusion'),
 		name: '3D artist/Gameplay programmer',
 		color: 'blue',
 		links: [trisgramLink],

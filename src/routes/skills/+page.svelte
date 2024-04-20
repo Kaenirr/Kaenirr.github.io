@@ -11,7 +11,11 @@
 </script>
 
 <CommonPage {title}>
-<div class="col mt-5 gap-7">
+	<div class="text-center">
+		This page is for extended description of my skills, for simple experience rundown go to my resumé/experience page
+	</div>
+
+	<div class="col mt-5 gap-7">
 	{#each result as group (group.category.slug)}
 		<div class="col gap-5 mb-7">
 			<div class="row items-center gap-5">

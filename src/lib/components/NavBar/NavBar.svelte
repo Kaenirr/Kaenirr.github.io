@@ -3,6 +3,8 @@
 	import { items } from '../../data/navbar';
 	import { theme, toggleTheme } from '$lib/stores/theme';
 
+	import UIcon from '../Icon/UIcon.svelte';
+
 	let expanded = false;
 
 	const toggleExpanded = (v?: boolean) => {
@@ -43,11 +45,11 @@
                 class="bg-transparent text-1em border-none cursor-pointer hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
                 on:click={() => toggleTheme()}
             >
-                {#if $theme}
-					<span>Dark Theme</span>
-                {:else}
-					<span>Light Theme</span>
-                {/if}
+				{#if $theme}
+					<span>Dark</span>
+				{:else}
+					<span>Light</span>
+				{/if}
                 </button>
 			</div>
 
@@ -82,9 +84,9 @@
 				on:click={() => toggleTheme()}
 			>
 				{#if $theme}
-					<span>Dark Theme</span>
+					<span>Dark</span>
 				{:else}
-					<span>Light Theme</span>
+					<span>Light</span>
 				{/if}
 			</button>
 		</div>

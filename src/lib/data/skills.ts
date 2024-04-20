@@ -2,6 +2,15 @@ import Assets from './assets';
 import type { Skill, SkillCategory } from '../types';
 import { omit, type StringWithAutoComplete } from '@riadh-adrani/utils';
 
+import blender from '../md/blender.md?raw';
+import substancePainter from '../md/substancePainter.md?raw';
+import unity from '../md/unity.md?raw';
+import photonFusion from '../md/photonFusion.md?raw';
+import photonQuantum from '../md/photonQuantum.md?raw';
+import unreal from '../md/unreal.md?raw';
+import csharp from '../md/cSharp.md?raw';
+
+
 const defineSkillCategory = <S extends string>(data: SkillCategory<S>): SkillCategory<S> => data;
 
 const categories = [
@@ -35,112 +44,64 @@ const defineSkill = <S extends string>(
 	return out;
 };
 
-export const items = [
-	defineSkill({
-		slug: 'blender',
-		color: 'orange',
-		description: 'WIP',
-		logo: Assets.Blender,
-		name: 'Blender',
-		category: '3D'
-	}),
-	defineSkill({
-		slug: 'substancePainter',
-		color: 'orange',
-		description: 'WIP',
-		logo: Assets.SubstancePainter,
-		name: 'Substance Painter',
-		category: '3D'
-	}),
-    defineSkill({
-		slug: 'unity',
-		color: 'white',
-		description: 'WIP',
-		logo: Assets.Unity,
-		name: 'Unity',
-		category: 'gameEng'
-	}),
-	defineSkill({
-		slug: 'photonFusion',
-		color: 'white',
-		description: 'WIP',
-		logo: Assets.PhotonFusion,
-		name: 'Photon Fusion',
-		category: 'framework'
-	}),
-	defineSkill({
-		slug: 'photonQuantum',
-		color: 'white',
-		description: 'WIP',
-		logo: Assets.PhotonQuantum,
-		name: 'Photon Quantum',
-		category: 'framework'
-	}),
-    defineSkill({
-		slug: 'unreal',
-		color: 'black',
-		description: 'WIP',
-		logo: Assets.Unreal,
-		name: 'Unreal Engine',
-		category: 'gameEng'
-	}),
-	defineSkill({
-		slug: 'csharp',
-		color: 'blue',
-		description: 'WIP',
-		logo: Assets.Csharp,
-		name: 'C#',
-		category: 'pro-lang'
-	}),
-	defineSkill({
-		slug: 'js',
-		color: 'yellow',
-		description: 'WIP',
-		logo: Assets.JavaScript,
-		name: 'Javascript',
-		category: 'pro-lang'
-	}),
-	defineSkill({
-		slug: 'ts',
-		color: 'blue',
-		description: 'WIP',
-		logo: Assets.TypeScript,
-		name: 'Typescript',
-		category: 'pro-lang'
-	}),
-	defineSkill({
-		slug: 'css',
-		color: 'blue',
-		description: 'WIP',
-		logo: Assets.CSS,
-		name: 'CSS',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'html',
-		color: 'orange',
-		description: 'WIP',
-		logo: Assets.HTML,
-		name: 'HTML',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'sass',
-		color: 'pink',
-		description: 'WIP',
-		logo: Assets.Sass,
-		name: 'Sass',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'svelte',
-		color: 'orange',
-		description: 'WIP',
-		logo: Assets.Svelte,
-		name: 'Svelte',
-		category: 'library'
-	}),
-] as const;
+	export const items = [
+		defineSkill({
+			slug: 'blender',
+			color: 'orange',
+			description: blender,
+			logo: Assets.Blender,
+			name: 'Blender',
+			category: '3D'
+		}),
+		defineSkill({
+			slug: 'substancePainter',
+			color: 'orange',
+			description: substancePainter,
+			logo: Assets.SubstancePainter,
+			name: 'Substance Painter',
+			category: '3D'
+		}),
+		defineSkill({
+			slug: 'unity',
+			color: 'white',
+			description: unity,
+			logo: Assets.Unity,
+			name: 'Unity',
+			category: 'gameEng'
+		}),
+		defineSkill({
+			slug: 'photonFusion',
+			color: 'white',
+			description: photonFusion,
+			logo: Assets.PhotonFusion,
+			name: 'Photon Fusion',
+			category: 'framework'
+		}),
+		defineSkill({
+			slug: 'photonQuantum',
+			color: 'white',
+			description: photonQuantum,
+			logo: Assets.PhotonQuantum,
+			name: 'Photon Quantum',
+			category: 'framework'
+		}),
+		defineSkill({
+			slug: 'unreal',
+			color: 'black',
+			description: unreal,
+			logo: Assets.Unreal,
+			name: 'Unreal Engine',
+			category: 'gameEng'
+		}),
+		defineSkill({
+			slug: 'csharp',
+			color: 'blue',
+			description: csharp,
+			logo: Assets.Csharp,
+			name: 'C#',
+			category: 'pro-lang'
+		}),
+	] as const;
 
 export const title = 'Skills';
 
